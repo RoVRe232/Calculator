@@ -48,11 +48,7 @@ public class Calculator {
 			}
 		}
 		
-		if(checkIfCorrect(eq)==0)
-		{
-			clear();
-			return 0;
-		}
+		
 		
 		for (int i = eq.length() - 1; i >= 0; i--) {
 			char x = eq.charAt(i);
