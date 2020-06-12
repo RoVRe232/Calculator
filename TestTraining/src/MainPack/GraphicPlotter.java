@@ -48,7 +48,7 @@ public class GraphicPlotter extends JFrame{
 		
 	}
 	
-	public GraphicPlotter(ArrayList<Line> lines)
+	public GraphicPlotter()
 	{
 		this.setSize(500, 500);
 		this.setTitle("Calculator function plotter");

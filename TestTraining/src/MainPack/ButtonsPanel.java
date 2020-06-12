@@ -11,8 +11,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class ButtonsPanel extends JPanel {
-	private MainDisplay mainDisplay;
-	private MainFrame mainFrame;
+	protected MainDisplay mainDisplay;
+	protected MainFrame mainFrame;
 	private HashMap<String, JButton> buttonsMap;
 
 	public ButtonsPanel(MainDisplay mainDisplay, MainFrame mainFrame) {
@@ -36,6 +36,8 @@ public class ButtonsPanel extends JPanel {
 			button.addActionListener(new InserterActionListener());
 		else if (listenerType == "changer")
 			button.addActionListener(new ChangeActionListener());
+		else if(listenerType == "opener")
+			button.addActionListener(new OpenActionListener());
 		else {
 			System.out.println("Wrong listenerType, setting to inserter by default");
 			button.addActionListener(new InserterActionListener());
@@ -70,5 +72,23 @@ public class ButtonsPanel extends JPanel {
 
 		}
 	}
+	
+	class OpenActionListener implements ActionListener{
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			
+			if(e.getActionCommand() == "GPlotter")
+			{
+				GraphicPlotter gp = new GraphicPlotter();
+				mainDisplay.add(gp);
+				//gp.setVisible(true);
+			}
+			
+		}
+		
+	}
+	
+	
 
 }

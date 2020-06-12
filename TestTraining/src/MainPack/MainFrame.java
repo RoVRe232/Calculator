@@ -22,12 +22,15 @@ public class MainFrame extends JFrame {
 
 	public static void main(String[] args) {
 		
-		//GraphicPlotter gp = new GraphicPlotter(new ArrayList<>());
+		//ArrayList<String> buttonsPanelControls = new ArrayList<>();
+		//ArrayList<String> buttonsPanelControlType = new ArrayList<>();
+		
 		MainFrame mainFrame = new MainFrame();
 		MainDisplay mainDisplay = new MainDisplay(mainFrame);
 		mainFrame.add(mainDisplay, BorderLayout.NORTH);
 
 		ButtonsPanel buttonsPanel = new ButtonsPanel(mainDisplay, mainFrame);
+		GPButtonsPanel gpbuttonsPanel = new GPButtonsPanel(mainDisplay, mainFrame);
 
 		buttonsPanel.setLayout(new GridLayout(0, 4));
 
@@ -54,10 +57,18 @@ public class MainFrame extends JFrame {
 		buttonsPanel.addControl("(", new JButton("("), "inserter");
 		buttonsPanel.addControl(")", new JButton(")"), "inserter");
 		mainFrame.add(buttonsPanel, BorderLayout.CENTER);
-
-		// buttonsPanel.setVisible(true);
+		
+		gpbuttonsPanel.setLayout(new GridLayout(0,3));
+		
+		gpbuttonsPanel.addControl("x", new JButton("x"), "inserter");
+		gpbuttonsPanel.addControl("y", new JButton("y"), "inserter");
+		gpbuttonsPanel.addControl("GPlotter", new JButton("GPlotter"), "opener");
+		
+		mainFrame.add(gpbuttonsPanel, BorderLayout.SOUTH);
+		
+		
 		mainFrame.setVisible(true);
-		//gp.setVisible(true);
+		
 	}
 
 }
