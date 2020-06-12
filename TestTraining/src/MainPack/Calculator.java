@@ -91,6 +91,7 @@ public class Calculator {
 	private int checkIfCorrect(String eq) {
 		for(int i=1; i<eq.length(); i++)
 		{
+			System.out.println("checked");
 			//TODO solve this checking algorithm to see if the equation is written correctly.(check for parentheses and signs)
 		}
 		
